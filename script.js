@@ -59,13 +59,13 @@
 
 // async/await
 
-let stocks = {
-  Fruits: ["strawberry", "grapes", "banana", "apple"],
-  liquid: ["water", "ice"],
-  holder: ["cone", "cup", "stick"],
-  toppings: ["chocolate", "peanuts"],
-};
-let is_shop_open = true;
+// let stocks = {
+//   Fruits: ["strawberry", "grapes", "banana", "apple"],
+//   liquid: ["water", "ice"],
+//   holder: ["cone", "cup", "stick"],
+//   toppings: ["chocolate", "peanuts"],
+// };
+// let is_shop_open = true;
 
 // let oreder = () => {
 //   return new Promise((resolve, reject) => {
@@ -78,15 +78,46 @@ let is_shop_open = true;
 // };
 // oreder();
 
-async function order() {
-  try {
-    await abc; //fake function
-  } catch (error) {
-    console.log("abc doesn't exist", error);
-  } finally {
-    console.log("runs code anyways");
-  }
+// async function order() {
+//   try {
+//     await abc; //fake function
+//   } catch (error) {
+//     console.log("abc doesn't exist", error);
+//   } finally {
+//     console.log("runs code anyways");
+//   }
+// }
+// order().then(() => {
+//   console.log("hi");
+// });
+
+let stocks = {
+  Fruits: ["strawberry", "grapes", "banana", "apple"],
+  liquid: ["water", "ice"],
+  holder: ["cone", "cup", "stick"],
+  toppings: ["chocolate", "peanuts"],
+};
+let is_shop_open = true;
+
+let toppings_choice = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(console.log("Which topping would you love?"));
+    }, 3000);
+  });
+};
+
+async function kitchen() {
+  console.log(" A ");
+  console.log(" B ");
+  console.log(" C ");
+
+  await toppings_choice();
+  console.log(" D ");
+  console.log(" E ");
 }
-order().then(() => {
-  console.log("hi");
-});
+kitchen();
+
+console.log("Cleaning the dishes");
+console.log("Cleaning the tables");
+console.log("Taking others orders");
