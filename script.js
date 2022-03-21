@@ -172,3 +172,21 @@ async function kitchen() {
   }
 }
 kitchen();
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((data) => data.json())
+//   .then((userDetails) => console.log(userDetails));
+
+const getDetails = async () => {
+  try {
+    let data = await fetch("https://jsonplaceholder.typicode.com/users");
+    let details = await data.json();
+    console.log(details);
+    details.forEach((userDetails) => {
+      console.log(userDetails.name);
+    });
+  } catch (errMsg) {
+    console.log(errMsg);
+  }
+};
+getDetails();
